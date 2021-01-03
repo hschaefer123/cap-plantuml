@@ -1,0 +1,1939 @@
+{
+  "definitions": {
+    "API_PRODUCT_SRV": {
+      "kind": "service"
+    },
+    "API_PRODUCT_SRV.A_Product": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "ProductType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CrossPlantStatus": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CrossPlantStatusValidityDate": {
+          "type": "cds.Date"
+        },
+        "CreationDate": {
+          "type": "cds.Date"
+        },
+        "CreatedByUser": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "LastChangeDate": {
+          "type": "cds.Date"
+        },
+        "LastChangedByUser": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "LastChangeDateTime": {
+          "type": "cds.Timestamp"
+        },
+        "IsMarkedForDeletion": {
+          "type": "cds.Boolean"
+        },
+        "ProductOldID": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "GrossWeight": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "PurchaseOrderQuantityUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "SourceOfSupply": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "WeightUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "NetWeight": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "CountryOfOrigin": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "CompetitorID": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProductGroup": {
+          "type": "cds.String",
+          "length": 9
+        },
+        "BaseUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "ItemCategoryGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ProductHierarchy": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "Division": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "VarblPurOrdUnitIsActive": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "VolumeUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "MaterialVolume": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "ANPCode": {
+          "type": "cds.String",
+          "length": 9
+        },
+        "Brand": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ProcurementRule": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ValidityStartDate": {
+          "type": "cds.Date"
+        },
+        "LowLevelCode": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "ProdNoInGenProdInPrepackProd": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "SerialIdentifierAssgmtProfile": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SizeOrDimensionText": {
+          "type": "cds.String",
+          "length": 32
+        },
+        "IndustryStandardName": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "ProductStandardID": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "InternationalArticleNumberCat": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ProductIsConfigurable": {
+          "type": "cds.Boolean"
+        },
+        "IsBatchManagementRequired": {
+          "type": "cds.Boolean"
+        },
+        "ExternalProductGroup": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "CrossPlantConfigurableProduct": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "SerialNoExplicitnessLevel": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ProductManufacturerNumber": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "ManufacturerNumber": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "ManufacturerPartProfile": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "QltyMgmtInProcmtIsActive": {
+          "type": "cds.Boolean"
+        },
+        "ChangeNumber": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "MaterialRevisionLevel": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "HandlingIndicator": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "WarehouseProductGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "WarehouseStorageCondition": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "StandardHandlingUnitType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SerialNumberProfile": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "AdjustmentProfile": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "PreferredUnitOfMeasure": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "IsPilferable": {
+          "type": "cds.Boolean"
+        },
+        "IsRelevantForHzdsSubstances": {
+          "type": "cds.Boolean"
+        },
+        "QuarantinePeriod": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "TimeUnitForQuarantinePeriod": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "QualityInspectionGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "HandlingUnitType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "HasVariableTareWeight": {
+          "type": "cds.Boolean"
+        },
+        "MaximumPackagingLength": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "MaximumPackagingWidth": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "MaximumPackagingHeight": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "UnitForMaxPackagingDimensions": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "to_Description": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductDescription",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        "to_Plant": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductPlant",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        "to_ProductBasicText": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductBasicText",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        "to_ProductInspectionText": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductInspectionText",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        "to_ProductProcurement": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductProcurement"
+        },
+        "to_ProductPurchaseText": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductPurchaseText",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        "to_ProductQualityMgmt": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductQualityMgmt"
+        },
+        "to_ProductSales": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductSales"
+        },
+        "to_ProductSalesTax": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductSalesTax",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        "to_ProductStorage": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductStorage"
+        },
+        "to_ProductUnitsOfMeasure": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductUnitsOfMeasure",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        "to_SalesDelivery": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductSalesDelivery",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        "to_Valuation": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductValuation",
+          "cardinality": {
+            "max": "*"
+          }
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductBasicText": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Language": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "LongText": {
+          "type": "cds.LargeString"
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductDescription": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Language": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "ProductDescription": {
+          "type": "cds.String",
+          "length": 40
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductInspectionText": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Language": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "LongText": {
+          "type": "cds.LargeString"
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductMLAccount": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "ValuationArea": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "ValuationType": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "CurrencyRole": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Currency": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "ProductPriceControl": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PriceUnitQty": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "MovingAveragePrice": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "StandardPrice": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductMLPrices": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "ValuationArea": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "ValuationType": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "CurrencyRole": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "FuturePrice": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "FuturePriceValidityStartDate": {
+          "type": "cds.Date"
+        },
+        "PlannedPrice": {
+          "type": "cds.Decimal",
+          "precision": 24,
+          "scale": 3
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductPlant": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "PurchasingGroup": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "CountryOfOrigin": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "RegionOfOrigin": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "ProductionInvtryManagedLoc": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ProfileCode": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ProfileValidityStartDate": {
+          "type": "cds.Date"
+        },
+        "AvailabilityCheckType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "FiscalYearVariant": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "PeriodType": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ProfitCenter": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Commodity": {
+          "type": "cds.String",
+          "length": 17
+        },
+        "GoodsReceiptDuration": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "MaintenanceStatusName": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "IsMarkedForDeletion": {
+          "type": "cds.Boolean"
+        },
+        "MRPType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "MRPResponsible": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "ABCIndicator": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "MinimumLotSizeQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "MaximumLotSizeQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "FixedLotSizeQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "ConsumptionTaxCtrlCode": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "IsCoProduct": {
+          "type": "cds.Boolean"
+        },
+        "ProductIsConfigurable": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "StockDeterminationGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "StockInTransferQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "StockInTransitQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "HasPostToInspectionStock": {
+          "type": "cds.Boolean"
+        },
+        "IsBatchManagementRequired": {
+          "type": "cds.Boolean"
+        },
+        "SerialNumberProfile": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "IsNegativeStockAllowed": {
+          "type": "cds.Boolean"
+        },
+        "GoodsReceiptBlockedStockQty": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "HasConsignmentCtrl": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "FiscalYearCurrentPeriod": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "FiscalMonthCurrentPeriod": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ProcurementType": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsInternalBatchManaged": {
+          "type": "cds.Boolean"
+        },
+        "ProductCFOPCategory": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ProductIsExciseTaxRelevant": {
+          "type": "cds.Boolean"
+        },
+        "to_PlantMRPArea": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductPlantMRPArea",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        "to_PlantQualityMgmt": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductPlantQualityMgmt"
+        },
+        "to_PlantSales": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductPlantSales"
+        },
+        "to_PlantStorage": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductPlantStorage"
+        },
+        "to_PlantText": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductPlantText"
+        },
+        "to_ProdPlantInternationalTrade": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductPlantIntlTrd"
+        },
+        "to_ProductPlantCosting": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductPlantCosting"
+        },
+        "to_ProductPlantForecast": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductPlantForecasting"
+        },
+        "to_ProductPlantProcurement": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductPlantProcurement"
+        },
+        "to_ProductSupplyPlanning": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductSupplyPlanning"
+        },
+        "to_ProductWorkScheduling": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductWorkScheduling"
+        },
+        "to_StorageLocation": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductStorageLocation",
+          "cardinality": {
+            "max": "*"
+          }
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductPlantCosting": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "IsCoProduct": {
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductPlantForecasting": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "ConsumptionRefUsageEndDate": {
+          "type": "cds.Date"
+        },
+        "ConsumptionQtyMultiplier": {
+          "type": "cds.Decimal",
+          "precision": 4,
+          "scale": 2
+        },
+        "ConsumptionReferenceProduct": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "ConsumptionReferencePlant": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductPlantIntlTrd": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "CountryOfOrigin": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "RegionOfOrigin": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "ConsumptionTaxCtrlCode": {
+          "type": "cds.String",
+          "length": 16
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductPlantMRPArea": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "MRPArea": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "MRPType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "MRPResponsible": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "MRPGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ReorderThresholdQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "PlanningTimeFence": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "LotSizingProcedure": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "LotSizeRoundingQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "MinimumLotSizeQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "MaximumLotSizeQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "MaximumStockQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "AssemblyScrapPercent": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "ProcurementSubType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "DfltStorageLocationExtProcmt": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "MRPPlanningCalendar": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "SafetyStockQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "RangeOfCvrgPrflCode": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "SafetyDuration": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "FixedLotSizeQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "LotSizeIndependentCosts": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "IsStorageCosts": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "RqmtQtyRcptTaktTmeInWrkgDays": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "SrvcLvl": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 1
+        },
+        "IsMarkedForDeletion": {
+          "type": "cds.Boolean"
+        },
+        "PerdPrflForSftyTme": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "IsMRPDependentRqmt": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsSafetyTime": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PlannedDeliveryDurationInDays": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "IsPlannedDeliveryTime": {
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductPlantProcurement": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "IsAutoPurOrdCreationAllowed": {
+          "type": "cds.Boolean"
+        },
+        "IsSourceListRequired": {
+          "type": "cds.Boolean"
+        },
+        "SourceOfSupplyCategory": {
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductPlantQualityMgmt": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "MaximumStoragePeriod": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "QualityMgmtCtrlKey": {
+          "type": "cds.String",
+          "length": 8
+        },
+        "MatlQualityAuthorizationGroup": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "HasPostToInspectionStock": {
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductPlantSales": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "LoadingGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductPlantStorage": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "InventoryForCycleCountInd": {
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductPlantText": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "LongText": {
+          "type": "cds.LargeString"
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductProcurement": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "PurchaseOrderQuantityUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "VarblPurOrdUnitStatus": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PurchasingAcknProfile": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductPurchaseText": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Language": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "LongText": {
+          "type": "cds.LargeString"
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductQualityMgmt": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "QltyMgmtInProcmtIsActive": {
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductSales": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "SalesStatus": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "SalesStatusValidityDate": {
+          "type": "cds.Date"
+        },
+        "TaxClassification": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "TransportationGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductSalesDelivery": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "ProductSalesOrg": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "ProductDistributionChnl": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "MinimumOrderQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "SupplyingPlant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PriceSpecificationProductGroup": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "AccountDetnProductGroup": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "DeliveryNoteProcMinDelivQty": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "ItemCategoryGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "DeliveryQuantityUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "DeliveryQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "ProductSalesStatus": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ProductSalesStatusValidityDate": {
+          "type": "cds.Date"
+        },
+        "SalesMeasureUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "IsMarkedForDeletion": {
+          "type": "cds.Boolean"
+        },
+        "ProductHierarchy": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "FirstSalesSpecProductGroup": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "SecondSalesSpecProductGroup": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "ThirdSalesSpecProductGroup": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "FourthSalesSpecProductGroup": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "FifthSalesSpecProductGroup": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "MinimumMakeToOrderOrderQty": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "to_SalesTax": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductSalesTax",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        "to_SalesText": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductSalesText",
+          "cardinality": {
+            "max": "*"
+          }
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductSalesTax": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Country": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "TaxCategory": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "TaxClassification": {
+          "key": true,
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductSalesText": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "ProductSalesOrg": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "ProductDistributionChnl": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Language": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "LongText": {
+          "type": "cds.LargeString"
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductStorage": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StorageConditions": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "TemperatureConditionInd": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "HazardousMaterialNumber": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "NmbrOfGROrGISlipsToPrintQty": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "LabelType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "LabelForm": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "MinRemainingShelfLife": {
+          "type": "cds.Decimal",
+          "precision": 4,
+          "scale": 0
+        },
+        "ExpirationDate": {
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductStorageLocation": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "StorageLocation": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "WarehouseStorageBin": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "MaintenanceStatus": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "PhysicalInventoryBlockInd": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CreationDate": {
+          "type": "cds.Date"
+        },
+        "IsMarkedForDeletion": {
+          "type": "cds.Boolean"
+        },
+        "DateOfLastPostedCntUnRstrcdStk": {
+          "type": "cds.Date"
+        },
+        "InventoryCorrectionFactor": {
+          "type": "cds.Double"
+        },
+        "InvtryRestrictedUseStockInd": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "InvtryCurrentYearStockInd": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "InvtryQualInspCurrentYrStkInd": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "InventoryBlockStockInd": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "InvtryRestStockPrevPeriodInd": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "InventoryStockPrevPeriod": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "InvtryStockQltyInspPrevPeriod": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "HasInvtryBlockStockPrevPeriod": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "FiscalYearCurrentPeriod": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "FiscalMonthCurrentPeriod": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "FiscalYearCurrentInvtryPeriod": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductSupplyPlanning": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "FixedLotSizeQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "MaximumLotSizeQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "MinimumLotSizeQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "LotSizeRoundingQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "LotSizingProcedure": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "MRPType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "MRPResponsible": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "SafetyStockQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "MinimumSafetyStockQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "PlanningTimeFence": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "ABCIndicator": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "MaximumStockQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "ReorderThresholdQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "PlannedDeliveryDurationInDays": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "SafetyDuration": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "PlanningStrategyGroup": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "TotalReplenishmentLeadTime": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "ProcurementType": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ProcurementSubType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "AssemblyScrapPercent": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "AvailabilityCheckType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "GoodsReceiptDuration": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "MRPGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductUnitsOfMeasure": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "AlternativeUnit": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "QuantityNumerator": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "QuantityDenominator": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "MaterialVolume": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "VolumeUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "GrossWeight": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "WeightUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "GlobalTradeItemNumber": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "GlobalTradeItemNumberCategory": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "UnitSpecificProductLength": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "UnitSpecificProductWidth": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "UnitSpecificProductHeight": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "ProductMeasurementUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "LowerLevelPackagingUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "RemainingVolumeAfterNesting": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "MaximumStackingFactor": {
+          "type": "cds.Integer"
+        },
+        "CapacityUsage": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "to_InternationalArticleNumber": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductUnitsOfMeasureEAN",
+          "cardinality": {
+            "max": "*"
+          }
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductUnitsOfMeasureEAN": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "AlternativeUnit": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "ConsecutiveNumber": {
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "ProductStandardID": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "InternationalArticleNumberCat": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "IsMainGlobalTradeItemNumber": {
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductValuation": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "ValuationArea": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "ValuationType": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "ValuationClass": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PriceDeterminationControl": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "StandardPrice": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "PriceUnitQty": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "InventoryValuationProcedure": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsMarkedForDeletion": {
+          "type": "cds.Boolean"
+        },
+        "MovingAveragePrice": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "ValuationCategory": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ProductUsageType": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ProductOriginType": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsProducedInhouse": {
+          "type": "cds.Boolean"
+        },
+        "ProdCostEstNumber": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "ProjectStockValuationClass": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ValuationClassSalesOrderStock": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PlannedPrice1InCoCodeCrcy": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "PlannedPrice2InCoCodeCrcy": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "PlannedPrice3InCoCodeCrcy": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "FuturePlndPrice1ValdtyDate": {
+          "type": "cds.Date"
+        },
+        "FuturePlndPrice2ValdtyDate": {
+          "type": "cds.Date"
+        },
+        "FuturePlndPrice3ValdtyDate": {
+          "type": "cds.Date"
+        },
+        "TaxBasedPricesPriceUnitQty": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "PriceLastChangeDate": {
+          "type": "cds.Date"
+        },
+        "PlannedPrice": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "PrevInvtryPriceInCoCodeCrcy": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "to_MLAccount": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductMLAccount",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        "to_MLPrices": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductMLPrices",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        "to_ValuationAccount": {
+          "type": "cds.Association",
+          "target": "API_PRODUCT_SRV.A_ProductValuationAccount"
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductValuationAccount": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "ValuationArea": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "ValuationType": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "CommercialPrice1InCoCodeCrcy": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "CommercialPrice2InCoCodeCrcy": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "CommercialPrice3InCoCodeCrcy": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "DevaluationYearCount": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "FutureEvaluatedAmountValue": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "FuturePriceValidityStartDate": {
+          "type": "cds.Date"
+        },
+        "IsLIFOAndFIFORelevant": {
+          "type": "cds.Boolean"
+        },
+        "LIFOValuationPoolNumber": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "TaxPricel1InCoCodeCrcy": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "TaxPrice2InCoCodeCrcy": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        },
+        "TaxPrice3InCoCodeCrcy": {
+          "type": "cds.Decimal",
+          "precision": 12,
+          "scale": 3
+        }
+      }
+    },
+    "API_PRODUCT_SRV.A_ProductWorkScheduling": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Product": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "MaterialBaseQuantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "UnlimitedOverDelivIsAllowed": {
+          "type": "cds.Boolean"
+        },
+        "OverDelivToleranceLimit": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 1
+        },
+        "UnderDelivToleranceLimit": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 1
+        },
+        "ProductionInvtryManagedLoc": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    }
+  }
+}

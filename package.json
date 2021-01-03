@@ -1,0 +1,37 @@
+{
+  "name": "cap-plantuml",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "https://github.com/hschaefer123/cap-plantuml",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^4",
+    "express": "^4",
+    "execa": "^4.0.0",
+    "get-stream": "^5.1.0"
+  },
+  "devDependencies": {
+    "sqlite3": "^5"
+  },
+  "scripts": {
+    "watch": "cds watch",
+    "start": "cds run"
+  },
+  "cds": {
+    "requires": {
+      "API_PRODUCT_SRV": {
+        "kind": "odata",
+        "model": "srv\\external\\API_PRODUCT_SRV",
+        "credentials": {
+          "destination": "YOUR_DESTINATION",
+          "url": "http://s4hana.system.de:8000",
+          "path": "/sap/opu/odata/sap/API_PRODUCT_SRV",
+          "username": "USER",
+          "password": "PW",
+          "requestTimeout": 30000
+        }
+      }
+    }
+  }
+}
