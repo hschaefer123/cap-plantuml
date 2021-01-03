@@ -1,6 +1,6 @@
 # Getting Started
 
-Welcome to your new project.
+Welcome to CAP Plantuml Demo!
 
 It contains these folders and files, following our recommended project layout:
 
@@ -17,8 +17,7 @@ File or Folder | Purpose
 
 - Open a new terminal and run `cds watch` 
 - (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
-
+- open test inside browser: http://localhost:4004/plantuml/renderTest()
 
 ## Learn More
 
