@@ -26,11 +26,13 @@ https://dev.to/simonbrown/diagrams-as-code-20eo
 ## Prerequisites
 
 For local testing, the destinations need to be locally available!
-Since sharing credentials in git is a bad idea, please copy the template 
+Since sharing credentials in a git repo is a bad idea in general, please copy the template 
 
 ```cp tpl-default-env.json default-env.json```
 
-to the used one, because this file is used by cap and ignore from git.
+to the used one, because this file is used by cap and ignored from git.
+The northwind example will work out-of-the-box. 
+The s4hana destination is only for demonstration, how to enter auth credentials for destinations.
 
 **default-env.json**
 ```json
@@ -56,8 +58,19 @@ to the used one, because this file is used by cap and ignore from git.
 
 - Open a new terminal and run `cds watch` 
 - (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- open test inside browser: http://localhost:4004/plantuml/renderTest()
-- open http://localhost:4004/plantuml/renderNorthwindOrder(OrderID=10248) to test northwind destination
+
+## Plain Test 
+Just render an inline object using 
+
+```http://localhost:4004/plantuml/renderTest()```
+
+![svg](./doc/Test.svg "Test Diagram")
+
+## Northwind service rendering Order 
+
+```http://localhost:4004/plantuml/renderNorthwindOrder(OrderID=10248)```
+
+![svg](./doc/NorthwindOrder.svg "Order Diagram")
 
 ## Visual Studio Code Demo
 If you are using Microsoft Visal Studio Code and the REST Client Extension humao.rest-client,
