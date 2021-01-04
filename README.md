@@ -72,16 +72,24 @@ http://localhost:4004/plantuml/renderNorthwindOrder(OrderID=10248)
 ![svg](./doc/NorthwindOrder.svg "Order Diagram")
 
 ## Visual Studio Code Demo
-If you are using Microsoft Visal Studio Code and the REST Client Extension humao.rest-client,
-there is a test folder with an example how to trigger render directly from extension.
+If you are using Microsoft Visal Studio Code and the great extension 
+[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) by Huachao Mao,
+you will find addtional http test calls in the test folder.
 
 To be able to externalize credentials (and maybe also host).
 
-**env.json**
+**.env**
 ```
 User=xxx
 Password=xxx
 ```
+
+The extension substitutes POSTMAN and allows you to call REST services.
+
+The ```Product.http``` file also showcases calling SAP API services with prefetching X-CSRF-Token,
+because you can depend on results of former calls.
+
+Inside ```Northwind.http``` you can test the used call and maybe figure out, what i want too add as a nice goody ;-)
 
 ## Learn More
 
