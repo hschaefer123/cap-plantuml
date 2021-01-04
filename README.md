@@ -75,26 +75,12 @@ http://localhost:4004/plantuml/renderNorthwindOrder(OrderID=10248)
 If you are using Microsoft Visal Studio Code and the REST Client Extension humao.rest-client,
 there is a test folder with an example how to trigger render directly from extension.
 
-To be able to externalize credentials
+To be able to externalize credentials (and maybe also host).
 
 **env.json**
-```json
-{
-    "VCAP_SERVICES": {},
-    "destinations": [
-        {
-            "name": "northwind",
-            "url": "https://services.odata.org/V2/Northwind/Northwind.svc"
-        },
-        {
-            "name": "s4hana",
-            "url": "http://s4hana.system.de:8000/sap/opu/odata/sap/API_PRODUCT_SRV",
-            "path": "/sap/opu/odata/sap/API_PRODUCT_SRV",
-            "username": "<username>",
-            "password": "<password>"
-        }
-    ]
-}
+```
+User=xxx
+Password=xxx
 ```
 
 ## Learn More

@@ -3,6 +3,7 @@ _out
 *.db
 connection.properties
 default-*.json
+.env
 gen/
 node_modules/
 target/
