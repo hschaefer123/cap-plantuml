@@ -62,13 +62,13 @@ The s4hana destination is only for demonstration, how to enter auth credentials 
 ## Plain Test 
 Just render an inline object using 
 
-```http://localhost:4004/plantuml/renderTest()```
+http://localhost:4004/plantuml/renderTest()
 
 ![svg](./doc/Test.svg "Test Diagram")
 
 ## Northwind service rendering Order 
 
-```http://localhost:4004/plantuml/renderNorthwindOrder(OrderID=10248)```
+http://localhost:4004/plantuml/renderNorthwindOrder(OrderID=10248)
 
 ![svg](./doc/NorthwindOrder.svg "Order Diagram")
 
