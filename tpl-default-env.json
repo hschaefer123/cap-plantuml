@@ -1,0 +1,16 @@
+{
+    "VCAP_SERVICES": {},
+    "destinations": [
+        {
+            "name": "northwind",
+            "url": "https://services.odata.org/V2/Northwind/Northwind.svc"
+        },
+        {
+            "name": "s4hana",
+            "url": "http://s4hana.system.de:8000/sap/opu/odata/sap/API_PRODUCT_SRV",
+            "path": "/sap/opu/odata/sap/API_PRODUCT_SRV",
+            "username": "<username>",
+            "password": "<password>"
+        }
+    ]
+}

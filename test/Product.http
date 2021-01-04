@@ -1,0 +1,57 @@
+@User = {{$dotenv User }}
+@Password = {{$dotenv Password }}
+@host = http://s4hana.system.de:8000
+@path = /sap/opu/odata/sap/API_PRODUCT_SRV
+
+# @name fetchToken
+HEAD {{host}}{{path}}
+Authorization: Basic {{User}} {{Password}}   
+X-CSRF-Token: Fetch
+###
+
+# @name readMetadata
+GET {{host}}{{path}}/$metadata
+###
+
+# @name readProducts
+GET {{host}}{{path}}/A_Product
+    ?$format=json
+    &$top=100
+    &$expand=to_Description
+    &$select=Product,ProductType,ProductGroup,BaseUnit,ProductIsConfigurable,to_Description/ProductDescription,to_Description/Language
+    &$filter=IsMarkedForDeletion eq false
+X-CSRF-Token: {{fetchToken.response.headers.X-CSRF-Token}}
+Content-Type: application/json
+Accept: */*
+###
+
+# @name readProductById
+GET {{host}}{{path}}/A_Product('200000000')
+    ?$format=json
+    &$expand=to_Description,to_Plant,to_ProductBasicText,to_ProductSales,to_ProductUnitsOfMeasure,to_ProductUnitsOfMeasure/to_InternationalArticleNumber,to_SalesDelivery,to_SalesDelivery/to_SalesText,to_Valuation
+X-CSRF-Token: {{fetchToken.response.headers.X-CSRF-Token}}
+Content-Type: application/json
+Accept: */*
+###
+
+# @name plantUml
+POST http://localhost:4008/svg
+Content-Type: text/plain
+
+@startjson
+{{readProductForUml.response.body.*}}
+@endjson
+###
+
+# @name testPlantUml
+POST http://localhost:4008/svg
+Content-Type: text/plain
+
+@startjson
+{
+   "fruit":"Apple",
+   "size":"Large",
+   "color":"Red"
+}
+@endjson
+###
