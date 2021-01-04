@@ -104,10 +104,25 @@ const deletePropFromObj = (obj, deleteThisKey) => {
     }
 }
 
+const pushUpPropFromObj = (obj, pushThisKey, parent, pKey) => {
+    if (Array.isArray(obj)) {
+        obj.forEach(element => pushUpPropFromObj(element, pushThisKey, obj, pKey))
+    } else if (typeof obj === 'object') {
+        for (const key in obj) {
+            const value = obj[key]
+            if (key === pushThisKey) parent[pKey] = obj[key]
+            pushUpPropFromObj(value, pushThisKey, obj, key)
+        }
+    }
+}
+
 function v2ToJSON(odata) {
     // remove unnecessary stuff
     deletePropFromObj(odata, '__metadata')
     deletePropFromObj(odata, '__deferred')
+
+    // eleminate results node by assigning parent node directly to results array
+    pushUpPropFromObj(odata, 'results')
 
     return JSON.stringify(odata)
 }
