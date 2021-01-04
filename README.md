@@ -27,8 +27,30 @@ https://dev.to/simonbrown/diagrams-as-code-20eo
 
 For local testing, the destinations need to be locally available!
 Since sharing credentials in git is a bad idea, please copy the template 
+
 ```cp tpl-default-env.json default-env.json```
+
 to the used one, because this file is used by cap and ignore from git.
+
+**default-env.json**
+```json
+{
+    "VCAP_SERVICES": {},
+    "destinations": [
+        {
+            "name": "northwind",
+            "url": "https://services.odata.org/V2/Northwind/Northwind.svc"
+        },
+        {
+            "name": "s4hana",
+            "url": "http://s4hana.system.de:8000/sap/opu/odata/sap/API_PRODUCT_SRV",
+            "path": "/sap/opu/odata/sap/API_PRODUCT_SRV",
+            "username": "<username>",
+            "password": "<password>"
+        }
+    ]
+}
+```
 
 ## Next Steps
 
