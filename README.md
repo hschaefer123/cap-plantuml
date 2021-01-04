@@ -58,14 +58,14 @@ The s4hana destination is only for demonstration, how to enter auth credentials 
 - Open a new terminal and run `cds watch` 
 - (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
 
-## Plain Test 
+## Test call rendering plain object
 Just render an inline object using 
 
 http://localhost:4004/plantuml/renderTest()
 
 ![svg](./doc/Test.svg "Test Diagram")
 
-## Northwind service rendering Order 
+## Northwind service call rendering orderById
 
 http://localhost:4004/plantuml/renderNorthwindOrder(OrderID=10248)
 
@@ -86,7 +86,7 @@ Password=xxx
 
 The extension substitutes POSTMAN and allows you to call REST services.
 
-The ```Product.http``` file also showcases calling SAP API services with prefetching X-CSRF-Token,
+The ```Product.http``` file also showcases calling SAP API services with prefetching ```X-CSRF-Token```,
 because you can depend on results of former calls.
 
 Inside ```Northwind.http``` you can test the used call and maybe figure out, what i want too add as a nice goody ;-)
