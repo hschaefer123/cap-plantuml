@@ -6,14 +6,9 @@ Content-Type: application/json
 Accept: */*
 ###
 
-@responseObject = {{readOrderById.response.body.$}}
-
-# @name plantUml
-# currently not working, because REST client needs to support jsonStringify to be able to passthrough 
-POST http://localhost:4004/plantuml/renderV2
+# @name plantJSON
+POST http://localhost:4004/plantJSON?mode=v2
 Content-Type: application/json
 
-{
-    "json": "{{$jsonStringify %responseObject}}"
-}
+{{readOrderById.response.body.$}}
 ###

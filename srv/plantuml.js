@@ -1,10 +1,15 @@
 const cds = require('@sap/cds')
 const plantuml = require('./lib/plantuml');
+const { v2ToJSON, getName, } = require('./lib/helper')
 
 module.exports = async function () {
 
     const northwindSrv = await cds.connect.to('Northwind');
     //const apiProductSrv = await cds.connect.to('API_PRODUCT_SRV');    
+
+    // use reflection
+    const csn = await cds.load('db')    // load model from source
+    const m = cds.reflect(csn)          // reflected model    
 
     // http://localhost:4004/plantuml/renderTest()
     this.on('renderTest', async (req) => {
@@ -49,7 +54,7 @@ module.exports = async function () {
         const { OrderID } = req.data
 
         // do not add $format=json, because it will be auto added by framework and othervice used twice leading to error!
-        const path = `/Orders(${OrderID})?$expand=Customer,Order_Details`
+        const path = `/Orders(${OrderID})?$expand=Customer,Order_Details,Order_Details`
 
         // call API_PRODUCT_SRV using CAP external service consumption using url string input
         let response = await northwindSrv.tx(req).get(path)
@@ -88,41 +93,56 @@ module.exports = async function () {
         req._.res.end(svg);
     })
 
-}
+    /* Render BookshopSchema
+     * http://localhost:4004/plantuml/renderBookshopSchema()
+    */    
+    this.on('renderBookshopSchema', async (req) => {
+        let ns = 'sap.capire.bookshop', lines = [], assocs = []
 
-// recursively delete a key from anywhere in the object
-// will mutate the obj - no need to return it
-const deletePropFromObj = (obj, deleteThisKey) => {
-    if (Array.isArray(obj)) {
-        obj.forEach(element => deletePropFromObj(element, deleteThisKey))
-    } else if (typeof obj === 'object') {
-        for (const key in obj) {
-            const value = obj[key]
-            if (key === deleteThisKey) delete obj[key]
-            else deletePropFromObj(value, deleteThisKey)
-        }
-    }
-}
+        lines.push(`@startuml`)
+        // start of package
+        lines.push(`package ${ns} {`)
 
-const pushUpPropFromObj = (obj, pushThisKey, parent, pKey) => {
-    if (Array.isArray(obj)) {
-        obj.forEach(element => pushUpPropFromObj(element, pushThisKey, obj, pKey))
-    } else if (typeof obj === 'object') {
-        for (const key in obj) {
-            const value = obj[key]
-            if (key === pushThisKey) parent[pKey] = obj[key]
-            pushUpPropFromObj(value, pushThisKey, obj, key)
-        }
-    }
-}
+        m.forall('entity', function (e) {
+            if (e.name.startsWith(ns)) {
+                lines.push('entity  ' + getName(e.name) + ' {')
+                // props
+                Object.entries(e.elements).forEach(([name, value]) => {
+                    let key = value.key ? '+' : ''
+                    let localized = value.localized ? 'localized ' : ''
+                    if (value.localized && !value.key) {
+                        // mark localized props
+                        key = '~'
+                    }
+                    let type = (value.type === 'cds.String' && value.length)
+                        ? `String[${value.length}]` : value.type.replace('cds.', '')
+                    lines.push(`${key}${name}: ${localized} ${type}`)
+                });
+                lines.push('}')
 
-function v2ToJSON(odata) {
-    // remove unnecessary stuff
-    deletePropFromObj(odata, '__metadata')
-    deletePropFromObj(odata, '__deferred')
+                // assocs
+                Object.entries(e.elements).forEach(([key, value]) => {
+                    if (value.target && value.target != e.name) {
+                        assocs.push(getName(e.name) + ' o-- ' + getName(value.target))
+                    }
+                });
+            }
+        })
 
-    // eleminate results node by assigning parent node directly to results array
-    pushUpPropFromObj(odata, 'results')
+        // add assocations after entities!
+        assocs.forEach(assoc => lines.push(assoc))
 
-    return JSON.stringify(odata)
+        // end of package
+        lines.push('}')
+
+        lines.push("@enduml")
+
+        // render SVG using plantuml (current release needs update of plantuml.jar for new JSON diagrams!)
+        const svg = await plantuml(lines.join("\r\n"));
+
+        // return custom content type by overriding CAP response handling
+        req._.res.set('Content-Type', 'image/svg+xml');
+        req._.res.end(svg);
+    })
+
 }

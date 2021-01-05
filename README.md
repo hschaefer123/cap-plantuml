@@ -58,6 +58,15 @@ The s4hana destination is only for demonstration, how to enter auth credentials 
 - Open a new terminal and run `cds watch` 
 - (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
 
+## Test Demos
+The demos are available using auto starting launchpad
+http://localhost:4004
+
+The classic homepage is available using route 
+http://localhost:4004/services
+
+![svg](./doc/cap-plant-flp "FLP Animation")
+
 ## Test call rendering plain object
 Just render an inline object using 
 
@@ -70,6 +79,12 @@ http://localhost:4004/plantuml/renderTest()
 http://localhost:4004/plantuml/renderNorthwindOrder(OrderID=10248)
 
 ![svg](./doc/NorthwindOrder.svg "Order Diagram")
+
+## Booksshop Schema
+
+http://localhost:4004/plantuml/renderBookshopSchema()
+
+![svg](./doc/BookshopSchema.svg "Bookschop Schemaq")
 
 ## Visual Studio Code Demo
 If you are using Microsoft Visal Studio Code and the great extension 
@@ -90,6 +105,10 @@ The ```Product.http``` file also showcases calling SAP API services with prefetc
 because you can depend on results of former calls.
 
 Inside ```Northwind.http``` you can test the used call and maybe figure out, what i want too add as a nice goody ;-)
+
+### Generate JSON Diagram directly from REST Client
+
+![svg](./doc/cap-plant-rest-client.svg "REST client diagram generation")
 
 ## Learn More
 
