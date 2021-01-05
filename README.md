@@ -59,13 +59,10 @@ The s4hana destination is only for demonstration, how to enter auth credentials 
 - (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
 
 ## Test Demos
-The demos are available using auto starting launchpad
-http://localhost:4004
+The demos are available using auto starting launchpad http://localhost:4004 
+and the classic services site ia available using http://localhost:4004/services
 
-The classic homepage is available using route 
-http://localhost:4004/services
-
-![svg](./doc/cap-plant-flp.gif "FLP Animation")
+![gif](./doc/cap-plant-flp.gif "FLP Animation")
 
 ## Test call rendering plain object
 Just render an inline object using 
@@ -108,7 +105,7 @@ Inside ```Northwind.http``` you can test the used call and maybe figure out, wha
 
 ### Generate JSON Diagram directly from REST Client
 
-![svg](./doc/cap-plant-rest-client.gif "REST client diagram generation")
+![gif](./doc/cap-plant-rest-client.gif "REST client diagram generation")
 
 ## Learn More
 
