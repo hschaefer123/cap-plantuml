@@ -65,7 +65,7 @@ http://localhost:4004
 The classic homepage is available using route 
 http://localhost:4004/services
 
-![svg](./doc/cap-plant-flp "FLP Animation")
+![svg](./doc/cap-plant-flp.gif "FLP Animation")
 
 ## Test call rendering plain object
 Just render an inline object using 
@@ -108,7 +108,7 @@ Inside ```Northwind.http``` you can test the used call and maybe figure out, wha
 
 ### Generate JSON Diagram directly from REST Client
 
-![svg](./doc/cap-plant-rest-client.svg "REST client diagram generation")
+![svg](./doc/cap-plant-rest-client.gif "REST client diagram generation")
 
 ## Learn More
 
