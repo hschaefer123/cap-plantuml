@@ -62,7 +62,7 @@ The s4hana destination is only for demonstration, how to enter auth credentials 
 The demos are available using auto starting launchpad http://localhost:4004 
 and the classic services site ia available using http://localhost:4004/services
 
-![gif](./doc/cap-plant-flp.gif "FLP Animation")
+![gif](./doc/cap-plant-flp-v2.gif "FLP Animation")
 
 ## Test call rendering plain object
 Just render an inline object using 
@@ -75,7 +75,7 @@ http://localhost:4004/plantuml/renderTest()
 
 http://localhost:4004/plantuml/renderNorthwindOrder(OrderID=10248)
 
-![svg](./doc/NorthwindOrder.svg "Order Diagram")
+![svg](./doc/NorthwindOrder-v2.svg "Order Diagram")
 
 ## Booksshop Schema
 
