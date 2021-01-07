@@ -12,3 +12,14 @@ Content-Type: application/json
 
 {{readOrderById.response.body.$}}
 ###
+
+# @name testPlantJSON
+POST http://localhost:4004/plantJSON
+Content-Type: application/json
+
+{
+   "fruit":"Apple",
+   "size":"Large",
+   "color":"Red"
+}
+###

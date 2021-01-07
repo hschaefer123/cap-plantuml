@@ -2,6 +2,8 @@ const cds = require('@sap/cds')
 const plantuml = require('./lib/plantuml');
 const { v2ToJSON, getName, } = require('./lib/helper')
 
+const { executeHttpRequest } = require('@sap-cloud-sdk/core')
+
 module.exports = async function () {
 
     const northwindSrv = await cds.connect.to('Northwind');
@@ -54,13 +56,29 @@ module.exports = async function () {
         const { OrderID } = req.data
 
         // do not add $format=json, because it will be auto added by framework and othervice used twice leading to error!
-        const path = `/Orders(${OrderID})?$expand=Customer,Order_Details,Order_Details`
+        const url = `/Orders(${OrderID})`
+        const params = {
+            $format: 'json',
+            $expand: 'Customer,Order_Details,Order_Details'
+        }
+        const path = `${url}?$expand=${params.$expand}`
 
-        // call API_PRODUCT_SRV using CAP external service consumption using url string input
-        let response = await northwindSrv.tx(req).get(path)
+        const useNative = true
+
+        // call service
+        const response = (useNative)
+            // using Generic HTTP Client from underlying @sap-cloud-sdk/core
+            // https://sap.github.io/cloud-sdk/docs/js/features/connectivity/generic-http-client
+            // to be able to get __metadata on result root
+            ? await executeHttpRequest({ destinationName: 'northwind' },
+                { method: 'get', url: url, params: params })
+            // using external service consumption using url string input
+            : await northwindSrv.tx(req).get(path)
+
+        let object = (useNative) ? response.data : response
 
         // render SVG using plantuml (current release needs update of plantuml.jar for new JSON diagrams!)
-        const svg = await plantuml("@startjson\r\n" + v2ToJSON(response) + "\r\n@endjson");
+        const svg = await plantuml("@startjson\r\n" + v2ToJSON(object) + "\r\n@endjson");
 
         // return custom content type by overriding CAP response handling
         req._.res.set('Content-Type', 'image/svg+xml');
@@ -95,7 +113,7 @@ module.exports = async function () {
 
     /* Render BookshopSchema
      * http://localhost:4004/plantuml/renderBookshopSchema()
-    */    
+    */
     this.on('renderBookshopSchema', async (req) => {
         let ns = 'sap.capire.bookshop', lines = [], assocs = []
 
@@ -103,11 +121,13 @@ module.exports = async function () {
         // start of package
         lines.push(`package ${ns} {`)
 
-        m.forall('entity', function (e) {
+        // example of reflection and model processing, see: https://cap.cloud.sap/docs/cds/js-api
+        // just a first start! ;-)
+        m.forall(cds.entity, function (e) {
             if (e.name.startsWith(ns)) {
                 lines.push('entity  ' + getName(e.name) + ' {')
-                // props
-                Object.entries(e.elements).forEach(([name, value]) => {
+                for (let element in e.elements) {
+                    let value = e.elements[element]
                     let key = value.key ? '+' : ''
                     let localized = value.localized ? 'localized ' : ''
                     if (value.localized && !value.key) {
@@ -116,16 +136,15 @@ module.exports = async function () {
                     }
                     let type = (value.type === 'cds.String' && value.length)
                         ? `String[${value.length}]` : value.type.replace('cds.', '')
-                    lines.push(`${key}${name}: ${localized} ${type}`)
-                });
+                    lines.push(`${key}${element}: ${localized} ${type}`)
+                }
                 lines.push('}')
 
-                // assocs
-                Object.entries(e.elements).forEach(([key, value]) => {
-                    if (value.target && value.target != e.name) {
-                        assocs.push(getName(e.name) + ' o-- ' + getName(value.target))
-                    }
-                });
+                // assocs (same loop as above, but neccessary for different push)
+                // for (let a of m.each(cds.Association, /*in:*/ e.elements))
+                for (element in e.elements)
+                    if (e.elements[element].target && e.elements[element].target !== e.name)
+                        assocs.push(getName(e.name) + ' o-- ' + getName(e.elements[element].target))
             }
         })
 

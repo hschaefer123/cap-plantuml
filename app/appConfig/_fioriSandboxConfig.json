@@ -1,0 +1,360 @@
+{
+    "services": {
+        "Container": {
+            "adapter": {
+                "config": {
+                    "image": "img/avatar/OpenUI5.svg"
+                }
+            }
+        },
+        "NavTargetResolution": {
+            "config": {
+                "enableClientSideTargetResolution": false
+            }
+        },
+        "CommonDataModel": {
+            "adapter": {
+                "module": "sap.ushell.adapters.cdm.PagesCommonDataModelAdapter"
+            }
+        },
+        "Ui5ComponentLoader": {
+            "config": {
+                "amendedLoading": false,
+                "loadDefaultDependencies": false
+            }
+        },
+        "PagePersistence": {
+            "adapter": {
+                "module": "sap.ushell.adapters.local.PagePersistenceAdapter",
+                "config": {
+                    "pages": [
+                        {
+                            "id": "/UI2/FLP_DEMO_PAGE",
+                            "title": "UI2 FLP Demo - Test Page",
+                            "description": "This page is used for testing the pages runtime",
+                            "sections": [
+                                {
+                                    "id": "id-1566210576050-45",
+                                    "title": "Custom & Dynamic Tiles",
+                                    "sectionIndex": 1,
+                                    "viz": [
+                                        {
+                                            "catalogTileId": "X-SAP-UI2-PAGE:X-SAP-UI2-CATALOGPAGE:/UI2/FLP_DEMO_TILE_TYPES:00O2TR99M0M2CG9A3QQQSRILN",
+                                            "id": "00O2TIH53H32S6MBXW7CNI5UX",
+                                            "itemIndex": 1,
+                                            "targetMappingId": "",
+                                            "vizId": "X-SAP-UI2-PAGE:X-SAP-UI2-CATALOGPAGE:/UI2/FLP_DEMO_TILE_TYPES:00O2TR99M0M2CG9A3QQQSRILN"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "Menu": {
+            "adapter": {
+                "module": "sap.ushell.adapters.local.MenuAdapter",
+                "config": {
+                    "enabled": true,
+                    "menuData": [
+                        {
+                            "title": "Space 1",
+                            "intent": "#Launchpad-openFLPPage?spaceId=/UI2/FLP_DEMO_PAGE&pageId=/UI2/FLP_DEMO_PAGE",
+                            "type": "IBN",
+                            "target": {
+                                "semanticObject": "Launchpad",
+                                "action": "openFLPPage",
+                                "parameters": [
+                                    {
+                                        "name": "spaceId",
+                                        "value": "/UI2/FLP_DEMO_PAGE"
+                                    },
+                                    {
+                                        "name": "pageId",
+                                        "value": "/UI2/FLP_DEMO_PAGE"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "LaunchPage": {
+            "adapter": {
+                "module": "sap.ushell.adapters.local.LaunchPageAdapter",
+                "config": {
+                    "xcatalogs": [
+                        {
+                            "id": "demo_catalog",
+                            "title": "Demos",
+                            "tiles": [
+                                {
+                                    "id": "toplantumltest",
+                                    "title": "Test JSON",
+                                    "size": "1x1",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "chipId": "catalogTile_00",
+                                        "title": "Test JSON",
+                                        "subtitle": "Test JSON subtitle",
+                                        "info": "info",
+                                        "icon": "sap-icon://syntax",
+                                        "targetURL": "#PlantUMLTest-display"
+                                    }
+                                },
+                                {
+                                    "id": "toplantumlnorthwind",
+                                    "title": "Northwind JSON",
+                                    "size": "1x1",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "chipId": "catalogTile_01",
+                                        "title": "Northwind JSON",
+                                        "subtitle": "Northwind JSON subtitle",
+                                        "info": "info",
+                                        "icon": "sap-icon://syntax",
+                                        "targetURL": "#PlantUMLNorthwind-display"
+                                    }
+                                },
+                                {
+                                    "id": "tobookstoreuml",
+                                    "title": "Bookstore Schema",
+                                    "size": "1x1",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "chipId": "catalogTile_02",
+                                        "title": "Bookstore Schema",
+                                        "subtitle": "Bookstore JSON subtitle",
+                                        "info": "info",
+                                        "icon": "sap-icon://syntax",
+                                        "targetURL": "#BookstoreUML-display"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "groups": [
+                        {
+                            "id": "demo_group",
+                            "title": "Demos",
+                            "isPreset": true,
+                            "isVisible": true,
+                            "isGroupLocked": false,
+                            "tiles": [
+                                {
+                                    "id": "toplantumltest",
+                                    "title": "Test JSON",
+                                    "subtitle": "Test JSON subtitle",
+                                    "size": "1x1",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "actions": [
+                                        {
+                                            "text": "Go To Northwind",
+                                            "icon": "sap-icon://action",
+                                            "targetURL": "#PlantUMLNorthwind-display"
+                                        },
+                                        {
+                                            "text": "Callback action",
+                                            "icon": "sap-icon://action-settings",
+                                            "press": "function (oEvent) { alert(\"in action\"); }"
+                                        }
+                                    ],
+                                    "properties": {
+                                        "chipId": "catalogTile_00",
+                                        "title": "Render JSON",
+                                        "subtitle": "inline object",
+                                        "info": "PlantUML JSON",
+                                        "icon": "sap-icon://syntax",
+                                        "xtargetURL": "#PlantUMLTest-display",
+                                        "targetURL": "/plantuml/renderTest()",
+                                        "navigationMode": "inline"
+                                    }
+                                },
+                                {
+                                    "id": "toplantumlnorthwind",
+                                    "title": "Northwind JSON",
+                                    "size": "1x1",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "chipId": "catalogTile_01",
+                                        "title": "Northwind JSON",
+                                        "subtitle": "Northwind JSON subtitle",
+                                        "info": "info",
+                                        "icon": "sap-icon://syntax",
+                                        "targetURL": "#PlantUMLNorthwind-display"
+                                    }
+                                },
+                                {
+                                    "id": "tobookstoreuml",
+                                    "title": "Bookstore Schema",
+                                    "size": "1x1",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "chipId": "catalogTile_02",
+                                        "title": "Bookstore Schema",
+                                        "subtitle": "Bookstore JSON subtitle",
+                                        "info": "info",
+                                        "icon": "sap-icon://syntax",
+                                        "targetURL": "#BookstoreUML-display"
+                                    }
+                                },
+                                {
+                                    "id": "card_001",
+                                    "formFactor": "Desktop,Tablet,Phone",
+                                    "chipId": "catalogCard_001",
+                                    "tileType": "sap.ui.integration.widgets.Card",
+                                    "isCard": true,
+                                    "manifest": {
+                                        "sap.flp": {
+                                            "tileSize": "1x2",
+                                            "columns": "3",
+                                            "rows": "3"
+                                        },
+                                        "sap.app": {
+                                            "type": "card"
+                                        },
+                                        "sap.ui5": {},
+                                        "sap.card": {
+                                            "type": "List",
+                                            "header": {
+                                                "title": "Medical Service",
+                                                "subtitle": "Walldorf, Germany",
+                                                "icon": {
+                                                    "src": "sap-icon://syringe",
+                                                    "text": "MS",
+                                                    "shape": ""
+                                                },
+                                                "status": {
+                                                    "text": "ready"
+                                                }
+                                            },
+                                            "content": {
+                                                "data": {},
+                                                "item": {
+                                                    "icon": {
+                                                        "label": "Icon",
+                                                        "value": "sap-icon://user"
+                                                    },
+                                                    "title": {
+                                                        "label": "Name",
+                                                        "value": "Name"
+                                                    },
+                                                    "description": {
+                                                        "label": "Desc",
+                                                        "value": "Desc"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "properties": {}
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "VisualizationDataProvider": {
+            "adapter": {
+                "module": "sap.ushell.adapters.local.LaunchPageAdapter",
+                "config": {
+                    "catalogs": [
+                        {
+                            "id": "/UI2/FLP_DEMO_TILE_TYPES",
+                            "title": "Sample Application Catalog",
+                            "tiles": [
+                                {
+                                    "size": "1x1",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "chipId": "X-SAP-UI2-PAGE:X-SAP-UI2-CATALOGPAGE:/UI2/FLP_DEMO_TILE_TYPES:00O2TR99M0M2CG9A3QQQSRILN",
+                                    "properties": {
+                                        "title": "News tile",
+                                        "subtitle": "Custom tile",
+                                        "info": "Not supported on local",
+                                        "icon": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "ClientSideTargetResolution": {
+            "adapter": {
+                "module": "sap.ushell.adapters.local.ClientSideTargetResolutionAdapter",
+                "config": {
+                    "inbounds": {
+                        "displayPlantumltest": {
+                            "semanticObject": "PlantUMLTest",
+                            "action": "display",
+                            "title": "",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "URL",
+                                "url": "/plantuml/renderTest()"
+                            }
+                        },
+                        "plantumlnorthwindDisplay": {
+                            "semanticObject": "PlantUMLNorthwind",
+                            "action": "display",
+                            "navMode": "inplace",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "URL",
+                                "url": "/plantuml/renderNorthwindOrder(OrderID=10248)",
+                                "navMode": "inplace"
+                            }
+                        },
+                        "bookstoreumlDisplay": {
+                            "semanticObject": "BookstoreUML",
+                            "action": "display",
+                            "title": "",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "URL",
+                                "url": "/plantuml/renderBookshopSchema()"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "NavigationDataProvider": {
+            "adapter": {
+                "module": "sap.ushell.adapters.local.ClientSideTargetResolutionAdapter",
+                "config": {
+                    "inbounds": {
+                        "Action-toappnavsample": {
+                            "semanticObject": "Action",
+                            "action": "toappnavsample",
+                            "title": "App Navigation Sample 1",
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=sap.ushell.demo.AppNavSample",
+                                "ui5ComponentName": "sap.ushell.demo.AppNavSample",
+                                "url": "/sap/bc/ui5_ui5/ui2/appnavsample/"
+                            },
+                            "signature": {
+                                "parameters": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
