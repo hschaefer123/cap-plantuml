@@ -1,5 +1,6 @@
 const cds = require('@sap/cds')
 const plantuml = require('./lib/plantuml');
+const fs = require('fs')
 const { v2ToJSON, getName, } = require('./lib/helper')
 
 const { executeHttpRequest } = require('@sap-cloud-sdk/core')
@@ -29,10 +30,24 @@ module.exports = async function () {
         // render SVG using plantuml (current release needs update of plantuml.jar for new JSON diagrams!)
         const svg = await plantuml("@startjson\r\n" + JSON.stringify(jsonObject) + "\r\n@endjson");
 
+        console.log("svg", svg);
+
         // return custom content type by overriding CAP response handling
         req._.res.set('Content-Type', 'image/svg+xml');
         req._.res.end(svg);
     })
+
+    // http://localhost:4004/plantuml/renderYaml()
+    this.on('renderYaml', async (req) => {
+        const yaml = fs.readFileSync('srv/demos/sap4kids.mta.yaml', 'utf8')
+
+        // render SVG using plantuml (current release needs update of plantuml.jar for new JSON diagrams!)
+        const svg = await plantuml("@startyaml\r\n" + yaml + "\r\n@endyaml");
+
+        // return custom content type by overriding CAP response handling
+        req._.res.set('Content-Type', 'image/svg+xml');
+        req._.res.end(svg);
+    })    
 
     // trying to implement callback service used by VSC rest client
     // currently waiting for my feature request https://github.com/Huachao/vscode-restclient/issues/745
@@ -115,7 +130,7 @@ module.exports = async function () {
      * http://localhost:4004/plantuml/renderBookshopSchema()
     */
     this.on('renderBookshopSchema', async (req) => {
-        let ns = 'sap.capire.bookshop', lines = [], assocs = []
+        let ns = 'cap.demo', lines = [], assocs = []
 
         lines.push(`@startuml`)
         // start of package

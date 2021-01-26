@@ -1,0 +1,18 @@
+locale,code,name,descr
+de,ACTIVITY,Aktivität,
+de,ARCHIMETE,Archimete,
+de,CLASS,Klasse,
+de,DEPLOYMENT,Deployment,
+de,ER,Entity Relationship,
+de,COMPONENT,Komponente,
+de,GANTT,Gantt,
+de,JSON,JSON,JSON data,
+de,MINDMAP,MindMap,
+de,NETWORK,Netzwerk,
+de,OBJECT,Objekt,
+de,SEQUENCE,Sequenzdiagramm,
+de,STATE,State,
+de,TIMING,Timing
+de,USECASE,Use Case,Usecases
+de,WIREFRAME,Wireframe,
+de,WBS,Word Break Down Structure,

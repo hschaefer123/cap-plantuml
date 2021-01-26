@@ -6,19 +6,22 @@ const findComments = (text) => text.match(/<!--(.*?)-->/gms);
 
 const plantuml = async (uml) => {
   const plantumlJar = resolve(__dirname, '../vendor/plantuml.jar');
+
+  console.log("svg data", uml)
+  
   const subprocess = execa(
     'java',
     [
       '-jar',
-      '-Djava.awt.headless=true',
-      '--add-opens=java.xml/com.sun.org.apache.xalan.internal.xsltc.trax="ALL-UNNAMED"',
+      //'-Djava.awt.headless=true',
+      //'--add-opens=java.xml/com.sun.org.apache.xalan.internal.xsltc.trax="ALL-UNNAMED"',
       plantumlJar,
       '-tsvg',
       '-pipe',
     ],
   );
 
-  process.nextTick(() => {
+  process.nextTick(() => {    
     subprocess.stdin.write(uml);
     subprocess.stdin.end();
   });

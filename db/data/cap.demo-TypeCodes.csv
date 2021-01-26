@@ -1,0 +1,18 @@
+code,name,descr
+ACTIVITY,Activity,
+ARCHIMETE,Archimete
+CLASS,Class,
+DEPLOYMENT,Deployment,
+ER,Entity Relationship,
+COMPONENT,Component,
+GANTT,Gantt,
+JSON,JSON,JSON data,
+MINDMAP,MindMap,
+NETWORK,Network
+OBJECT,Object,
+SEQUENCE,Sequence diagram,
+STATE,State,
+TIMING,Timing
+USECASE,Use Case,Usecases
+WIREFRAME,Wireframe
+WBS,Word Break Down Structure,

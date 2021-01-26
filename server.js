@@ -27,8 +27,13 @@ cds.once('bootstrap', (app) => {
 
     // mount static resources and common middlewares...
 
+    // demo assets
+    const demo_assets = resolve(cds.env.folders.srv + '/assets')
+    app.use('/assets', express.static(demo_assets))
+
     // using custom app/index.html flp sandbox using /services for original index.html
     app.get('/services', function (_, res) {
+        //const index = require('@sap/cds/app/index.js')
         const index = require('@sap/cds/app/index.js')
         res.send(index.html)
     })

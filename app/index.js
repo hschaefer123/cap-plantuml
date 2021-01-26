@@ -70,6 +70,13 @@
                 url: "/plantuml/renderTest()",
                 navigationMode: "embedded"
             },
+            "PlantUMLYaml-display": {
+                title: "Test YAML",
+                description: "PlantUML YAML data",
+                applicationType: "URL",
+                url: "/plantuml/renderYaml()",
+                navigationMode: "embedded"
+            },
             "PlantUMLNorthwind-display": {
                 title: "Northwind JSON",
                 description: "External Service Consumption",
@@ -84,6 +91,16 @@
                 url: "/plantuml/renderBookshopSchema()",
                 navigationMode: "embedded"
             }
+            /*
+            "Demo-manage": {
+                title: "Manage Demos",
+                description: "CRUD Cockpit",
+                additionalInformation: "SAPUI5.Component=cap.demo.files",
+                applicationType : "URL",
+                url: "/files/webapp",
+                navigationMode: "embedded"
+            },
+            */            
         }
     };
 
@@ -96,7 +113,7 @@
         ' id="sap-ui-bootstrap"' +
         ' data-sap-ui-theme="sap_fiori_3"' +
         ' data-sap-ui-language="en"' +
-        ' data-sap-ui-libs="sap.ui.core, sap.m, sap.ushell"' +
+        ' data-sap-ui-libs="sap.ui.core, sap.m, sap.ushell, sap.fe.templates"' +
         ' data-sap-ui-compatVersion="edge"' +
         ' data-sap-ui-frameOptions="allow"' +
         ' data-sap-ui-flexibilityServices=\'[{"connector": "LocalStorageConnector"}]\'' +

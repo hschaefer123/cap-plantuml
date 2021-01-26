@@ -3,5 +3,9 @@
     "**/.gitignore": true,
     "**/.git": true,
     "**/.vscode": true
-  }
-}
+  },
+  "workbench.editorAssociations": [{
+    "viewType": "default",
+    "filenamePattern": ["*.md","*.csv"]
+  }]
+} 

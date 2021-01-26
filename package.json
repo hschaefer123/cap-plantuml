@@ -1,43 +1,50 @@
 {
-  "name": "cap-plantuml",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "https://github.com/hschaefer123/cap-plantuml",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^4",
-    "easy-livereload": "^1.4.3",
-    "execa": "^5.0.0",
-    "express": "^4",
-    "get-stream": "^6.0.0",
-    "node-dev": "^6.2.0"
-  },
-  "devDependencies": {
-    "sqlite3": "^5"
-  },
-  "scripts": {
-    "watch": "cds watch",
-    "start": "cds run"
-  },
-  "cds": {
-    "requires": {
-      "Northwind": {
-        "kind": "odata",
-        "model": "srv\\external\\Northwind",
-        "credentials": {
-          "destination": "northwind",
-          "requestTimeout": 30000
+    "name": "cap-plantuml",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "https://github.com/hschaefer123/cap-plantuml",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^4",
+        "easy-livereload": "^1.4.3",
+        "execa": "^5.0.0",
+        "express": "^4",
+        "get-stream": "^6.0.0",
+        "node-dev": "^6.2.0"
+    },
+    "devDependencies": {
+        "@sap/ux-specification": "^1.84.1",
+        "sqlite3": "5.0.0"
+    },
+    "scripts": {
+        "watch": "cds watch",
+        "start": "cds run",
+        "test:dot": "java -jar srv/vendor/plantuml.jar -tsvg -testdot",
+        "test:json": "java -jar srv/vendor/plantuml.jar -tsvg srv/demos/ClassDiagram.txt",
+        "test:yaml": "java -jar srv/vendor/plantuml.jar -tsvg srv/demos/sap4kids.mta.yaml"        
+    },
+    "cds": {
+        "requires": {
+            "Northwind": {
+                "kind": "odata",
+                "model": "srv\\external\\Northwind",
+                "credentials": {
+                    "destination": "northwind",
+                    "requestTimeout": 30000
+                }
+            },
+            "API_PRODUCT_SRV": {
+                "kind": "odata",
+                "model": "srv\\external\\API_PRODUCT_SRV",
+                "credentials": {
+                    "destination": "s4hana",
+                    "requestTimeout": 30000
+                }
+            }
         }
-      },
-      "API_PRODUCT_SRV": {
-        "kind": "odata",
-        "model": "srv\\external\\API_PRODUCT_SRV",
-        "credentials": {
-          "destination": "s4hana",
-          "requestTimeout": 30000
-        }
-      }
-    }
-  }
+    },
+    "sapux": [
+        "app/files"
+    ]
 }

@@ -1,0 +1,8 @@
+{
+    "ID": "12345",
+    "Object": {
+        "String": "hello world",
+        "Integer": 1,
+        "Boolean": true
+    }
+}
