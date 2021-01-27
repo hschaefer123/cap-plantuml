@@ -6,7 +6,7 @@ service PlantUMLService @(path : '/plantuml') {
     function renderTest() returns String;    
     function renderYaml() returns String;    
     function renderNorthwindOrder(OrderID : northwindSrv.Orders.OrderID) returns String;
-    function renderBookshopSchema() returns String;
+    function renderDBSchema() returns String;
     //function renderProduct(Product : productSrv.A_Product.Product) returns String;
 
     // callback service action for VSC forwarded content

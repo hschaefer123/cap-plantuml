@@ -64,31 +64,31 @@
                 url: "/services"
             },
             "PlantUMLTest-display": {
-                title: "Test JSON",
-                description: "PlantUML JSON data",
+                title: "JSON data",
+                description: "Inline JSON object",
                 applicationType: "URL",
                 url: "/plantuml/renderTest()",
                 navigationMode: "embedded"
             },
             "PlantUMLYaml-display": {
-                title: "Test YAML",
-                description: "PlantUML YAML data",
+                title: "YAML data (sap4kids)",
+                description: "Filesystem mta.yaml",
                 applicationType: "URL",
                 url: "/plantuml/renderYaml()",
                 navigationMode: "embedded"
             },
-            "PlantUMLNorthwind-display": {
-                title: "Northwind JSON",
-                description: "External Service Consumption",
+            "PlantUMLDbSchema-display": {
+                title: "ER Diagram cap.demo",
+                description: "Reflection db schema",
                 applicationType: "URL",
-                url: "/plantuml/renderNorthwindOrder(OrderID=10248)",
+                url: "/plantuml/renderDBSchema()",
                 navigationMode: "embedded"
             },
-            "BookstoreUML-display": {
-                title: "Bookstore Schema",
-                description: "db/schema.cds",
+            "PlantUMLNorthwind-display": {
+                title: "Northwind JSON data",
+                description: "External OData Srv",
                 applicationType: "URL",
-                url: "/plantuml/renderBookshopSchema()",
+                url: "/plantuml/renderNorthwindOrder(OrderID=10248)",
                 navigationMode: "embedded"
             }
             /*

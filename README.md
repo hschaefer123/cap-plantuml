@@ -62,7 +62,7 @@ The s4hana destination is only for demonstration, how to enter auth credentials 
 The demos are available using auto starting launchpad http://localhost:4004 
 and the classic services site ia available using http://localhost:4004/services
 
-![gif](./doc/cap-plant-flp-v2.gif "FLP Animation")
+![gif](./doc/cap-plant-flp-v3.gif "FLP Animation")
 
 ## Test call rendering plain object
 Just render an inline object using 
@@ -77,11 +77,17 @@ http://localhost:4004/plantuml/renderNorthwindOrder(OrderID=10248)
 
 ![svg](./doc/NorthwindOrder-v2.svg "Order Diagram")
 
-## Booksshop Schema
+## [sap4kids](https://github.com/SAP-samples/SAP4Kids) YAML data
 
-http://localhost:4004/plantuml/renderBookshopSchema()
+http://localhost:4004/plantuml/renderYaml()
 
-![svg](./doc/BookshopSchema.svg "Bookschop Schemaq")
+![svg](./doc/Yaml.svg "YAML data diagram")
+
+## DB Schema
+
+http://localhost:4004/plantuml/renderDBSchema()
+
+![svg](./doc/DBSchema.svg "Bookschop Schemaq")
 
 ## Visual Studio Code Demo
 If you are using Microsoft Visal Studio Code and the great extension 
@@ -106,6 +112,16 @@ Inside ```Northwind.http``` you can test the used call and maybe figure out, wha
 ### Generate JSON Diagram directly from REST Client
 
 ![gif](./doc/cap-plant-rest-client.gif "REST client diagram generation")
+
+## Developing
+While developing extensions for sap.fe, like custom views and fragments, the framework will use
+the [XML View Cache](https://sapui5.hana.ondemand.com/#/topic/3d85d5eec1594be0a71236d5e61f89aa).
+This cache uses the browsers local IndexedDB Storage and not the network cache.
+During development, you can disable the cache using an url parameter 
+
+```sap-ui-xx-viewCache=false```
+
+Example url: http://localhost:4004/#Shell-home?sap-ui-xx-viewCache=false
 
 ## Learn More
 

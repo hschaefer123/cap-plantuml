@@ -126,10 +126,10 @@ module.exports = async function () {
         req._.res.end(svg);
     })
 
-    /* Render BookshopSchema
-     * http://localhost:4004/plantuml/renderBookshopSchema()
+    /* Render DBSchema
+     * http://localhost:4004/plantuml/renderDBSchema()
     */
-    this.on('renderBookshopSchema', async (req) => {
+    this.on('renderDBSchema', async (req) => {
         let ns = 'cap.demo', lines = [], assocs = []
 
         lines.push(`@startuml`)
