@@ -21,7 +21,7 @@
         "watch": "cds watch",
         "start": "cds run",
         "test:dot": "java -jar srv/vendor/plantuml.jar -tsvg -testdot",
-        "test:json": "java -jar srv/vendor/plantuml.jar -tsvg srv/demos/ClassDiagram.txt",
+        "test:seq": "java -jar srv/vendor/plantuml.jar srv/demos/segw_sequence.txt",
         "test:yaml": "java -jar srv/vendor/plantuml.jar -tsvg srv/demos/sap4kids.mta.yaml"        
     },
     "cds": {
