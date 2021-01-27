@@ -2,15 +2,7 @@
 
 Welcome to a small SAP CAP demo (@sap/cds).
 
-This repo [https://t.co/ZVjhFXpCou](https://github.com/hschaefer123/cap-plantuml) showcases the rendering of JSON diagrams with [PlantUML](https://plantuml.com/de/), which can be also used directly inside git:
-
-```plantuml
-
-@startuml
-Bob->Alice : hello
-@enduml
-
-```
+This repo [https://t.co/ZVjhFXpCou](https://github.com/hschaefer123/cap-plantuml) showcases the rendering of JSON diagrams with [PlantUML](https://plantuml.com/de/).
 
 The demo renders a SVG from given JSON string using plantuml.jar executed via command line.
 
