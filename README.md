@@ -2,7 +2,15 @@
 
 Welcome to a small SAP CAP demo (@sap/cds).
 
-This [repo](https://github.com/hschaefer123/cap-plantuml) showcases the rendering of JSON diagrams with [PlantUML](https://plantuml.com/de/).
+This repo [https://t.co/ZVjhFXpCou](https://github.com/hschaefer123/cap-plantuml) showcases the rendering of JSON diagrams with [PlantUML](https://plantuml.com/de/), which can be also used directly inside git:
+
+```plantuml
+
+@startuml
+Bob->Alice : hello
+@enduml
+
+```
 
 The demo renders a SVG from given JSON string using plantuml.jar executed via command line.
 
@@ -56,7 +64,10 @@ The s4hana destination is only for demonstration, how to enter auth credentials 
 
 ## Next Steps
 - Open a new terminal and run `cds watch` 
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
+- Visual Studio Code
+    - choose _**Terminal** > Run Task > cds watch_
+    - or use *NPM Scripts* section and press *run* button on watch script
+    - or press **CTRL - SHIFT - B** to run default build tasks used to start default services
 
 ## Test Demos
 The demos are available using auto starting launchpad http://localhost:4004 
@@ -88,6 +99,12 @@ http://localhost:4004/plantuml/renderYaml()
 http://localhost:4004/plantuml/renderDBSchema()
 
 ![svg](./doc/DBSchema.svg "Bookschop Schemaq")
+
+## SEGW Sequence
+
+http://localhost:4004/plantuml/renderSegw()
+
+![svg](./doc/SegwSequence.svg "SEGW Sequence")
 
 ## Visual Studio Code Demo
 If you are using Microsoft Visal Studio Code and the great extension 

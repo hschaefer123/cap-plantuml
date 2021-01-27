@@ -90,6 +90,13 @@
                 applicationType: "URL",
                 url: "/plantuml/renderNorthwindOrder(OrderID=10248)",
                 navigationMode: "embedded"
+            },
+            "PlantUMLSegwSeuence-display": {
+                title: "SEGW Sequence Diagram",
+                description: "Filesystem textfile",
+                applicationType: "URL",
+                url: "/plantuml/renderSegw()",
+                navigationMode: "embedded"
             }
             /*
             "Demo-manage": {

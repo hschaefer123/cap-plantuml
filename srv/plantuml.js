@@ -49,6 +49,18 @@ module.exports = async function () {
         req._.res.end(svg);
     })    
 
+    // http://localhost:4004/plantuml/renderSegw()
+    this.on('renderSegw', async (req) => {
+        const uml = fs.readFileSync('srv/demos/segw_sequence.txt', 'utf8')
+
+        // render SVG using plantuml (current release needs update of plantuml.jar for new JSON diagrams!)
+        const svg = await plantuml(uml);
+
+        // return custom content type by overriding CAP response handling
+        req._.res.set('Content-Type', 'image/svg+xml');
+        req._.res.end(svg);
+    })    
+
     // trying to implement callback service used by VSC rest client
     // currently waiting for my feature request https://github.com/Huachao/vscode-restclient/issues/745
     // to be able to json stringify relevant data

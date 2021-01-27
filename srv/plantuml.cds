@@ -5,6 +5,7 @@ service PlantUMLService @(path : '/plantuml') {
 
     function renderTest() returns String;    
     function renderYaml() returns String;    
+    function renderSegw() returns String;    
     function renderNorthwindOrder(OrderID : northwindSrv.Orders.OrderID) returns String;
     function renderDBSchema() returns String;
     //function renderProduct(Product : productSrv.A_Product.Product) returns String;

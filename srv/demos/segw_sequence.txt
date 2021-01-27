@@ -1,0 +1,91 @@
+@startuml
+skinparam sequence {
+    ArrowColor #262f38
+    DefaultFontColor #262f38
+    LifeLineBorderColor #d67a65
+}
+
+title == Central Hub Deployment
+
+actor User as User
+
+box "Front-End Server\nNW AS ABAP 7.5 SP1 [GWD100]" #LightBlue  
+    collections "UI5_UI5" as UI5_UI5 
+	boundary  "Model Provider" as ODATA        
+end box
+
+note over UI5_UI5 
+    ZAPP_GW (Package)
+    ZGUI5 (UI5 BSP)
+end note
+
+box "Back-End Server\nNW AS ABAP 7.31 SP18 [ERP000]\nSAP ERP 6.0 EHP 6\nSAP Gateway 2.0 SP12" #LightYellow
+    boundary "Data Provider" as DPC_MPC
+    control "Business Logic (BAPI)" as RUNTIME    
+    database "Database" as DB
+end box
+
+note over DPC_MPC    
+    ZAPP_GW (Package)
+    ZAPP (SEGW Project)        
+    ZCL_ZAPP_DPC_EXT (Classes)
+end note
+
+note over RUNTIME 
+    ZAPP (Package)
+    ZAPP (Function Group)
+end note
+
+note over DB 
+    ZRW_CR (Table)
+end note
+
+group UI
+User -> UI5_UI5 : GET app request \n (index.html, *.css, *.js)
+User <- UI5_UI5 : MIME response
+end
+
+group ODATA [/sap/opu/odata/sap/ZAPP_SRV] 
+    group GET Metadata [./$metadata]
+        User -> ODATA : GET request        
+        ODATA -> DPC_MPC : get service metadata
+        ODATA <- DPC_MPC : metadata return
+        User <- ODATA : XML response
+    end
+    'note right: this is another note
+    
+    group GET ChangeSet [./ChangeSet]
+            User -> ODATA : GET request
+            ODATA -> DPC_MPC : CHANGESET_GET_ENTITYSET
+            DPC_MPC -> RUNTIME : call function Z_CHANGE_LIST_ZENTRAL 
+            RUNTIME -> DB : SELECT * FROM ZRW_CR
+            RUNTIME <- DB : data response
+            DPC_MPC <- RUNTIME : function return
+            ODATA <- DPC_MPC : deep structure return
+            User -> ODATA : JSON response    
+        end
+    
+    group GET Change [./ChangeSet('1234')?$expand=to_Items]
+        User -> ODATA : GET request
+        ODATA -> DPC_MPC : GET_EXPANDED_ENTITY
+        DPC_MPC -> RUNTIME : call function Z_CHANGE_READ 
+        RUNTIME -> DB : SELECT * FROM ZRW_CR
+        RUNTIME <- DB : data response
+        DPC_MPC <- RUNTIME : function return
+        ODATA <- DPC_MPC : deep structure return
+        User -> ODATA : JSON response    
+    end
+    
+    group POST Change [./ChangeSet]
+            User -> ODATA : POST request
+            ODATA -> DPC_MPC : CREATE_DEEP_ENTITY
+            DPC_MPC -> RUNTIME : call function Z_CHANGE_SAVE_ZENTRAL
+            RUNTIME -> DB : UPDATE * FROM ZRW_CR
+            RUNTIME <- DB : data response
+            DPC_MPC <- RUNTIME : function return
+            ODATA <- DPC_MPC : deep structure return
+            User -> ODATA : JSON response    
+        end
+end
+
+@enduml
