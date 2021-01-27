@@ -23,6 +23,9 @@ PlantUML offers a diagrams-as-code approach, where images are created from a tex
 There are simliar projects and you can find an intro here
 https://dev.to/simonbrown/diagrams-as-code-20eo
 
+Also read this [Blog](https://docs-as-co.de/news/plantuml-markdown-code-gitlab-github-integration/) for more use cases
+like VSC markdown support, integration into GitHub or GitLab.
+
 ## Prerequisites
 
 For local testing, the destinations need to be locally available!
